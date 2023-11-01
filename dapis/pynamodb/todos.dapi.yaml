@@ -30,7 +30,7 @@ fields:
 - name: text
   data_type: string
   description: The entry for the todo action
-  is_nullable: false
+  is_nullable: true
   is_pii: true
   share_status: unstable
 - name: todo_id
