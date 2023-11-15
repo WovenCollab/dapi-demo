@@ -50,7 +50,7 @@ fields:
     include sensitive information about the todos.
   is_nullable: false
   is_pii: true
-  share_status: unstable
+  share_status: stable
 - name: todo_id
   data_type: string
   description: The unique identifier for the todo entry. It is a string field used
