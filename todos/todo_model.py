@@ -19,6 +19,7 @@ class TodoModel(Model):
     createdAt = UTCDateTimeAttribute(null=False, default=datetime.now())
     updatedAt = UTCDateTimeAttribute(null=False)
     user_id = UnicodeAttribute(null=False)
+    deletedAt = UTCDateTimeAttribute(null=True)
 
     def save(self, conditional_operator=None, **expected_values):
         self.updatedAt = datetime.now()
