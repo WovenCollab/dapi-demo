@@ -45,5 +45,11 @@ fields:
   is_nullable: false
   is_pii: false
   share_status: unstable
+- name: user_id
+  data_type: string
+  description: placeholder text
+  is_nullable: false
+  is_pii: true
+  share_status: unstable
 primary_key:
 - todo_id
