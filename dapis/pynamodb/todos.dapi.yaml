@@ -1,9 +1,10 @@
 schema: https://opendapi.org/spec/0-0-1/dapi.json
 urn: todos.dapis.todos
 type: entity
-description: Todos app core model. This DAPI contains information about the todos
-  created in the Todos app, including their completion status, creation and update
-  timestamps, and user identifiers.
+description: Todos app core model. This DAPI contains detailed information about the
+  todos created in the Todos app, including their completion status, creation and
+  update timestamps, and user identifiers. It provides essential data for analyzing
+  user activity and tracking the progress of tasks within the app.
 owner_team_urn: todos.team.engineering
 datastores:
   producers:
@@ -30,8 +31,8 @@ fields:
   share_status: stable
 - name: createdAt
   data_type: string
-  description: The date and time when this todo entry was created. It is a string
-    field in ISO 8601 format.
+  description: The date and time when this todo entry was created in the app. It is
+    a string field in ISO 8601 format.
   is_nullable: false
   is_pii: false
   share_status: stable
@@ -60,8 +61,8 @@ fields:
   share_status: stable
 - name: updatedAt
   data_type: string
-  description: The date and time when this todo entry was last updated. It is a string
-    field in ISO 8601 format.
+  description: The date and time when this todo entry was last updated in the app.
+    It is a string field in ISO 8601 format.
   is_nullable: false
   is_pii: false
   share_status: stable
