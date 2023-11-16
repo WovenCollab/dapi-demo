@@ -23,48 +23,49 @@ fields:
     status of a todo item.
   is_nullable: false
   is_pii: false
-  share_status: unstable
+  share_status: stable
 - name: createdAt
   data_type: string
   description: The date and time when this entry was created. It represents the creation
     timestamp of a todo item.
   is_nullable: false
   is_pii: false
-  share_status: unstable
+  share_status: stable
 - name: is_active
   data_type: boolean
   description: Indicates the active status of a todo. This field is used to determine
     if a todo item is currently active or not.
   is_nullable: false
   is_pii: false
-  share_status: unstable
+  share_status: stable
 - name: text
   data_type: string
-  description: The entry for the todo action. This field contains the text description
-    of the todo item and is used to display the actual content of the todo.
+  description: The text description of the todo item. This field contains the text
+    description of the todo item and is used to display the actual content of the
+    todo.
   is_nullable: false
   is_pii: true
-  share_status: unstable
+  share_status: stable
 - name: todo_id
   data_type: string
   description: Publicly used identifier for the todo entry. This field is used as
     a unique identifier for the todo item and is publicly accessible.
   is_nullable: false
   is_pii: false
-  share_status: unstable
+  share_status: stable
 - name: updatedAt
   data_type: string
   description: The date and time when this entry was updated. It represents the timestamp
     of the last update to a todo item.
   is_nullable: false
   is_pii: false
-  share_status: unstable
+  share_status: stable
 - name: user_id
   data_type: string
   description: The user ID associated with the todo item. This field is used to link
     the todo item to the user who created it.
   is_nullable: false
   is_pii: true
-  share_status: unstable
+  share_status: stable
 primary_key:
 - todo_id
