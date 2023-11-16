@@ -2,7 +2,10 @@ schema: https://opendapi.org/spec/0-0-1/dapi.json
 urn: todos.dapis.todos
 type: entity
 description: The DAPI contains the core model for the Todos app, including information
-  about individual todos and their status.
+  about individual todos and their status. It provides details about the creation,
+  modification, and deletion of todos, along with their completion status. The dataset
+  includes fields such as 'checked', 'createdAt', 'deletedAt', 'is_active', 'text',
+  'todo_id', and 'updatedAt', each serving a specific purpose in the application.
 owner_team_urn: todos.team.engineering
 datastores:
   producers:
@@ -18,43 +21,51 @@ datastores:
 fields:
 - name: checked
   data_type: boolean
-  description: Indicates whether a todo is completed or not
+  description: Indicates whether a todo is completed or not. It is a boolean value
+    representing the completion status of a todo item.
   is_nullable: false
   is_pii: false
   share_status: unstable
 - name: createdAt
   data_type: string
-  description: The date and time when this entry was created
+  description: The date and time when this entry was created. It is a string value
+    representing the date and time of the creation of a todo item.
   is_nullable: false
   is_pii: false
   share_status: unstable
 - name: deletedAt
   data_type: string
-  description: The date and time when this entry was deleted
+  description: The date and time when this entry was deleted. It is a string value
+    representing the date and time of the deletion of a todo item.
   is_nullable: false
   is_pii: false
   share_status: unstable
 - name: is_active
   data_type: boolean
-  description: Indicates the active status of the todo entry
+  description: Indicates the active status of the todo entry. It is a boolean value
+    representing the active status of a todo item.
   is_nullable: true
   is_pii: false
   share_status: unstable
 - name: text
   data_type: string
-  description: The description of the todo action
+  description: The description of the todo action. It contains textual information
+    about the action associated with a todo item. This field might contain Personally
+    Identifiable Information (PII) and should be treated with caution.
   is_nullable: false
   is_pii: true
   share_status: unstable
 - name: todo_id
   data_type: string
-  description: Publicly used identifier for the todo entry
+  description: Publicly used identifier for the todo entry. It is a string value representing
+    the identifier of a todo item that can be publicly accessed.
   is_nullable: false
   is_pii: false
   share_status: unstable
 - name: updatedAt
   data_type: string
-  description: The date and time when this entry was last updated
+  description: The date and time when this entry was last updated. It is a string
+    value representing the date and time of the last update of a todo item.
   is_nullable: false
   is_pii: false
   share_status: unstable
