@@ -27,6 +27,18 @@ fields:
   is_nullable: false
   is_pii: false
   share_status: unstable
+- name: deletedAt
+  data_type: string
+  description: placeholder text
+  is_nullable: false
+  is_pii: true
+  share_status: unstable
+- name: is_private
+  data_type: boolean
+  description: placeholder text
+  is_nullable: false
+  is_pii: true
+  share_status: unstable
 - name: text
   data_type: string
   description: The entry for the todo action
