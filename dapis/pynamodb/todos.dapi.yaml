@@ -3,7 +3,8 @@ urn: todos.dapis.todos
 type: entity
 description: Todos app core model. This DAPI contains information about the todos
   created in the Todos app, including their completion status, creation and update
-  timestamps, and user identifiers.
+  timestamps, and user identifiers. The dataset represents the core data model for
+  the Todos app, capturing the details of each todo entry and its associated metadata.
 owner_team_urn: todos.team.engineering
 datastores:
   producers:
@@ -30,30 +31,28 @@ fields:
   share_status: stable
 - name: createdAt
   data_type: string
-  description: The date and time when this todo entry was created. It is a string
-    field in ISO 8601 format.
+  description: The date and time when this todo entry was created, in ISO 8601 format.
   is_nullable: false
   is_pii: false
   share_status: stable
 - name: text
   data_type: string
-  description: The description or content of the todo action. It is a string field
-    containing the details of the todo activity. This field contains PII as it may
-    include sensitive information about the todos.
+  description: The description or content of the todo action. It contains sensitive
+    information about the todos and is considered as PII.
   is_nullable: false
   is_pii: true
   share_status: stable
 - name: todo_id
   data_type: string
-  description: The unique identifier for the todo entry. It is a string field used
-    as a public identifier for the todo.
+  description: The unique identifier for the todo entry. It is a public identifier
+    for the todo.
   is_nullable: false
   is_pii: false
   share_status: stable
 - name: updatedAt
   data_type: string
-  description: The date and time when this todo entry was last updated. It is a string
-    field in ISO 8601 format.
+  description: The date and time when this todo entry was last updated, in ISO 8601
+    format.
   is_nullable: false
   is_pii: false
   share_status: stable
