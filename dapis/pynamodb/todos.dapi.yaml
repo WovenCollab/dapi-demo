@@ -2,7 +2,9 @@ schema: https://opendapi.org/spec/0-0-1/dapi.json
 urn: todos.dapis.todos
 type: entity
 description: The core model for the Todos application, which includes information
-  about the todos, their status, and relevant timestamps.
+  about the todos, their status, relevant timestamps, and user identifiers. This dataset
+  contains details about the todo items, their completion status, creation and update
+  timestamps, and user identifiers associated with each todo entry.
 owner_team_urn: todos.team.engineering
 datastores:
   producers:
@@ -46,7 +48,7 @@ fields:
   share_status: unstable
 - name: text
   data_type: string
-  description: The text content of the todo action. This field may contain Personally
+  description: The text content of the todo action. This field contains Personally
     Identifiable Information (PII) and should be handled with appropriate security
     measures.
   is_nullable: false
@@ -68,8 +70,8 @@ fields:
   share_status: unstable
 - name: user_id
   data_type: string
-  description: The user identifier associated with the todo entry. This field may
-    contain Personally Identifiable Information (PII) and should be handled with appropriate
+  description: The user identifier associated with the todo entry. This field contains
+    Personally Identifiable Information (PII) and should be handled with appropriate
     security measures.
   is_nullable: false
   is_pii: true
