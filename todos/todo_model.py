@@ -14,10 +14,13 @@ class TodoModel(Model):
             host = None
 
     todo_id = UnicodeAttribute(hash_key=True, null=False)
+    user_id = UnicodeAttribute(hash_key=False, null=False)
     text = UnicodeAttribute(null=False)
     checked = BooleanAttribute(null=False)
+    is_active = BooleanAttribute(null=False, default=True)
     createdAt = UTCDateTimeAttribute(null=False, default=datetime.now())
     updatedAt = UTCDateTimeAttribute(null=False)
+    deletedAt = UTCDateTimeAttribute(null=True)
 
     def save(self, conditional_operator=None, **expected_values):
         self.updatedAt = datetime.now()
