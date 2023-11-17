@@ -2,7 +2,7 @@ schema: https://opendapi.org/spec/0-0-1/dapi.json
 urn: todos.dapis.todos
 type: entity
 description: The DAPI for the core model of the Todos app, which includes information
-  about individual todo entries and their status.
+  about individual todo entries, their status, and associated user details.
 owner_team_urn: todos.team.engineering
 datastores:
   producers:
@@ -10,6 +10,10 @@ datastores:
     data:
       identifier: todos
       namespace: ''
+  - urn: todos.datastores.snowflake
+    data:
+      identifier: PRODUCTION_TODOS
+      namespace: TODOS.DYNAMODB
   consumers:
   - urn: todos.datastores.snowflake
     data:
@@ -43,7 +47,7 @@ fields:
 - name: text
   data_type: string
   description: The actual content of the todo entry, which may contain personally
-    identifiable information.
+    identifiable information such as task details and descriptions.
   is_nullable: false
   is_pii: true
   share_status: unstable
