@@ -6,7 +6,7 @@ This example demonstrates how to integrate an app with OpenDAPI and later with W
 * Setting up OpenDAPI / Woven integration from scratch
 
 Check out this walkthrough video
-[![Watch the video](https://img.youtube.com/vi/3q2fI9siGHs/maxresdefault.jpg)](https://youtu.be/3q2fI9siGHs)
+[![Watch the video](https://img.youtube.com/vi/3q2fI9siGHs/maxresdefault.jpg)](https://www.youtube.com/watch?v=C99CLQ9NSVo)
 
 ## Making changes to an existing model.
 In the Todos app, we have a basic pynamodb model, for which the DAPI files and woven integration checks are already setup.
