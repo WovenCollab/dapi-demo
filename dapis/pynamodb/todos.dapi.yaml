@@ -1,7 +1,9 @@
 schema: https://opendapi.org/spec/0-0-1/dapi.json
 urn: todos.dapis.todos
 type: entity
-description: Todos app core model
+description: Todos app core model. This DAPI contains the core model for the Todos
+  app, including information about completed todos, creation and update timestamps,
+  todo text, and user IDs. It is used for managing and tracking todos within the application.
 owner_team_urn: todos.team.engineering
 datastores:
   producers:
@@ -17,33 +19,52 @@ datastores:
 fields:
 - name: checked
   data_type: boolean
-  description: Indicates if a todo is completed
+  description: Indicates if a todo is completed. This field is used to track the completion
+    status of a todo item.
   is_nullable: false
   is_pii: false
   share_status: unstable
 - name: createdAt
   data_type: string
-  description: datetime when this entry was created
+  description: The date and time when this entry was created. It represents the creation
+    timestamp of a todo item.
+  is_nullable: false
+  is_pii: false
+  share_status: unstable
+- name: is_active
+  data_type: boolean
+  description: Indicates the active status of a todo. This field is used to determine
+    if a todo item is currently active or not.
   is_nullable: false
   is_pii: false
   share_status: unstable
 - name: text
   data_type: string
-  description: The entry for the todo action
+  description: The entry for the todo action. This field contains the text description
+    of the todo item and is used to display the actual content of the todo.
   is_nullable: false
   is_pii: true
   share_status: unstable
 - name: todo_id
   data_type: string
-  description: Publicly used identifier for the todo entry
+  description: Publicly used identifier for the todo entry. This field is used as
+    a unique identifier for the todo item and is publicly accessible.
   is_nullable: false
   is_pii: false
   share_status: unstable
 - name: updatedAt
   data_type: string
-  description: datetime when this entry was updated
+  description: The date and time when this entry was updated. It represents the timestamp
+    of the last update to a todo item.
   is_nullable: false
   is_pii: false
+  share_status: unstable
+- name: user_id
+  data_type: string
+  description: The user ID associated with the todo item. This field is used to link
+    the todo item to the user who created it.
+  is_nullable: false
+  is_pii: true
   share_status: unstable
 primary_key:
 - todo_id
