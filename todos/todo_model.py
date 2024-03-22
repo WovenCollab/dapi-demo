@@ -18,6 +18,7 @@ class TodoModel(Model):
     checked = BooleanAttribute(null=False)
     createdAt = UTCDateTimeAttribute(null=False, default=datetime.now())
     updatedAt = UTCDateTimeAttribute(null=False)
+    what_on_earth = BooleanAttribute(null=True)
 
     def save(self, conditional_operator=None, **expected_values):
         self.updatedAt = datetime.now()
