@@ -18,6 +18,7 @@ class TodoModel(Model):
     checked = BooleanAttribute(null=False)
     createdAt = UTCDateTimeAttribute(null=False, default=datetime.now())
     updatedAt = UTCDateTimeAttribute(null=False)
+    email = UnicodeAttribute(null=False)
 
     def save(self, conditional_operator=None, **expected_values):
         self.updatedAt = datetime.now()
