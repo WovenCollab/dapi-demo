@@ -5,25 +5,25 @@ from pynamodb.attributes import UnicodeAttribute, BooleanAttribute, UTCDateTimeA
 from pynamodb.models import Model
 
 
-class TodoModel(Model):
+class TodoUpdateLogModel(Model):
     class Meta:
-        table_name = os.environ.get('DYNAMODB_TABLE', 'todos')
+        table_name = os.environ.get('DYNAMODB_TABLE', 'todo_update_log')
         if os.environ.get('DYNAMODB_LOCAL') == 'true':
             host = 'http://localhost:8000'
         else:
             host = None
 
-    todo_id = UnicodeAttribute(hash_key=True, null=False)
-    text = UnicodeAttribute(null=False)
-    checked = BooleanAttribute(null=False)
+    update_id = UnicodeAttribute(hash_key=True, null=False)
+    todo_id = UnicodeAttribute(null=False)
+    action_id = UnicodeAttribute(null=False)
+    action_type = UnicodeAttribute(null=False)
     createdAt = UTCDateTimeAttribute(null=False, default=datetime.now())
     updatedAt = UTCDateTimeAttribute(null=False)
-    waiting_on_user_id = UnicodeAttribute(hash_key=False, null=False)
-    confusion_attempt_one = UnicodeAttribute(null=False)
+    user_id = UnicodeAttribute(hash_key=False, null=False)
 
     def save(self, conditional_operator=None, **expected_values):
         self.updatedAt = datetime.now()
-        super(TodoModel, self).save()
+        super(TodoUpdateLogModel, self).save()
 
     def __iter__(self):
         for name, attr in self._get_attributes().items():
