@@ -50,10 +50,10 @@ fields:
   access: private
 - name: assignee_email
   data_type: string
-  description: The email address of the assignee for the to-do item
+  description: The work email address of the assignee for the to-do item
   is_nullable: false
   is_pii: true
-  access: private
+  access: public
 context:
   service: todos.todo_model
   integration: pynamodb
