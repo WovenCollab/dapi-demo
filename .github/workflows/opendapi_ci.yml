@@ -48,7 +48,7 @@ jobs:
       run: |
         # Back to root of the repository
         cd ${{ github.workspace }}
-        pip install opendapi
+        pip install --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple opendapi==0.0.29a17
         opendapi run
 
       env:
