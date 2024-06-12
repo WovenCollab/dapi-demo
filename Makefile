@@ -42,7 +42,7 @@ deploy:
 		${DEPLOY_OPTIONS}
 
 test:
-	make requirements > /dev/null
+	make requirements
 	poetry run pytest -s -vv
 
 .PHONY: serverless requirements setup localserver deploy test
